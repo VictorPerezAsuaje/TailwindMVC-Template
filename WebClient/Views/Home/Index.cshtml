@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="flex flex-col items-center border-b border-gray-300 py-16 md:flex-row lg:py-20">
+    <img src="~/img/author.png" class="max-w-xs" alt="author" />
+    <div class="m-auto text-center">
+        <h1 class="pt-3 font-body text-4xl font-semibold text-primary md:text-5xl lg:text-6xl">
+            Hi, I’m Joe Doe.
+        </h1>
+        <p class="pt-3 font-body text-xl font-light text-primary">
+            A web developer and biologist enjoying the sunny life in Seville, Spain.
+        </p>
+    </div>            
+</div>
+
+<div class="border-b border-gray-300 py-16 lg:py-20">
+    <div class="flex items-center pb-6">
+        <i class="fa-solid fa-2x fa-address-card"></i>
+        <h3 class="ml-3 font-body text-2xl font-semibold text-primary">
+            My Story
+        </h3>
+    </div>
+    <div>
+        <p class="font-body font-light text-primary">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Nibh mauris cursus
+            mattis molestie. Et leo duis ut diam. Sit amet tellus cras adipiscing
+            enim eu turpis. Adipiscing at in tellus integer feugiat.
+            <br />
+            <br />
+            Maecenas accumsan lacus vel facilisis. Eget egestas purus viverra
+            accumsan in nisl nisi scelerisque eu. Non tellus orci ac auctor augue
+            mauris augue neque gravida. Auctor augue mauris augue neque gravida in
+            fermentum et sollicitudin. Tempus urna et pharetra pharetra massa massa
+            ultricies mi quis. Amet mauris commodo quis imperdiet massa. Integer
+            vitae justo eget magna fermentum iaculis eu non.
+        </p>
+    </div>
+</div>
+
+<div class="py-16 lg:py-20">
+    <div class="flex items-center">
+        <i class="fa-solid fa-blog fa-2x"></i>
+        <h3 class="ml-3 font-body text-2xl font-semibold text-primary">
+            My Posts
+        </h3>
+    </div>
+    <div>
+        @foreach (Post post in StaticData.Posts.Take(3).OrderBy(x => x.CreatedOn))
+        {
+            <div class="border-b border-gray-300 py-8">
+                <span class="mb-4 inline-block rounded-full bg-@(post.Category.Color)-300 px-2 py-1 font-body text-sm text-@(post.Category.Color)-600">@post.Category.Name</span>
+                <a href="#" class="block font-body text-lg font-semibold text-primary transition-colors hover:text-@(post.Category.Color)-600">
+                    @post.Title
+                </a>
+                <div class="flex items-center pt-4">
+                    <p class="pr-2 font-body font-light text-primary">
+                        @post.CreatedOn.ToString("MMM dd, yyyy")
+                    </p>
+                    <span class="font-body text-grey"> - </span>
+                    <p class="pl-2 font-body font-light text-primary">
+                        @post.MinutesToRead min read
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="pb-16 lg:pb-20">
+    <div class="flex items-center pb-6">
+        <i class="fa-solid fa-diagram-project fa-2x"></i>
+        <h3 class="ml-3 font-body text-2xl font-semibold text-primary">
+            My Projects
+        </h3>
+    </div>
+    <div>
+        @foreach(Project proj in StaticData.Projects)
+        {
+            <a href="#" class="mb-6 flex items-center justify-between border border-gray-300 px-4 py-4 sm:px-6">
+                <div class="w-9/10 pr-8">
+                    <h4 class="font-body text-lg font-semibold text-primary">
+                        @proj.Title
+                    </h4>
+                    <p class="font-body font-light text-primary">
+                        @proj.Description
+                    </p>
+                </div>
+                <span class="w-1/10">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </span>
+            </a>
+        }
+    </div>
+</div>
+
+
+

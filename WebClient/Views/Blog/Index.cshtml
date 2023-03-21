@@ -1,0 +1,56 @@
+﻿@model List<Post>
+@{
+    ViewData["Title"] = "Blog";
+}
+
+<div class="py-16 lg:py-20">
+    <h1 class="pt-5 font-body text-4xl font-semibold text-primary md:text-5xl lg:text-6xl">
+        Blog
+    </h1>
+
+    <div class="pt-3 sm:w-3/4">
+        <p class="font-body text-xl font-light text-primary">
+            Articles, tutorials, snippets, rants, and everything else. Subscribe for
+            updates as they happen.
+        </p>
+    </div>
+
+    <form class="flex flex-col my-12 sm:flex-row">
+        <input type="email" placeholder="Add your email here..." class="w-full border border-primary bg-white px-3 font-body font-light text-primary placeholder-primary transition-colors focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary" />
+        <button type="submit" class="font-medium rounded-lg text-sm px-10 py-4 text-xl text-white bg-purple-700 rounded-none hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 ">
+            <i class="fa-solid fa-envelope"></i>
+        </button>
+
+    </form>
+
+    <div class="pt-8 lg:pt-12">
+        @foreach(Post post in StaticData.Posts.Take(5).OrderByDescending(x => x.CreatedOn))
+        {
+            <div class="border-b border-gray-300 pt-10 pb-8">
+                <span class="mb-4 inline-block rounded-full bg-@(post.Category.Color)-300 px-2 py-1 font-body text-sm text-@(post.Category.Color)-600">@post.Category.Name</span>
+                <a href="#" class="block font-body text-lg font-semibold text-primary transition-colors hover:text-@(post.Category.Color)-600">
+                    @post.Title
+                </a>
+                <div class="flex items-center pt-4">
+                    <p class="pr-2 font-body font-light text-primary">
+                        @post.CreatedOn.ToString("MMM dd, yyyy")
+                    </p>
+                    <span class="font-body text-grey">//</span>
+                    <p class="pl-2 font-body font-light text-primary">
+                       @post.MinutesToRead min read
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="flex pt-8 lg:pt-16">
+        <span class="cursor-pointer border-2 border-secondary px-3 py-1 font-body font-medium text-secondary">1</span>
+        <span class="ml-3 cursor-pointer border-2 border-primary px-3 py-1 font-body font-medium text-primary transition-colors hover:border-secondary hover:text-secondary">2</span>
+        <span class="ml-3 cursor-pointer border-2 border-primary px-3 py-1 font-body font-medium text-primary transition-colors hover:border-secondary hover:text-secondary">3</span>
+        <span class="group ml-3 flex cursor-pointer items-center border-2 border-primary px-3 py-1 font-body font-medium text-primary transition-colors hover:border-secondary hover:text-secondary">
+            Next
+            <i class="bx bx-right-arrow-alt ml-1 text-primary transition-colors group-hover:text-secondary"></i>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿<nav class="bg-white border-gray-200 px-4 py-2.5 rounded dark:bg-gray-900">
+    <div class="container flex flex-wrap items-center justify-between mx-auto">
+        <a asp-controller="Home" asp-action="Index" class="flex items-center">
+            <i class="fa-solid fa-2x fa-anchor"></i>
+        </a>
+
+        <div class="flex">
+            <div class="items-center justify-between flex w-auto">
+                <ul class="flex flex-row p-4 mt-4 rounded-lg border-0 space-x-8 mt-0 text-sm font-medium">
+                    <li>
+                        <a asp-controller="Blog" asp-action="Index" class="block py-2 pl-3 pr-4 text-primary hover:text-purple-500 rounded md:bg-transparent md:p-0" aria-current="page">Blog</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- User menu -->
+
+            <div class="flex items-center ml-3">
+                <button type="button" class="flex mr-3 text-sm rounded-full p-2 md:mr-0 focus:ring-4 focus:ring-gray-300 hover:text-gray-900 hover:bg-gray-100" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+                <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
+                    <div class="px-4 py-3">
+                        <span class="block text-sm text-gray-900">Joe Doe</span>
+                        <span class="block text-sm font-medium text-gray-500 truncate">joedoe@sample.com</span>
+                    </div>
+                    <ul class="py-2" aria-labelledby="user-menu-button">
+                        <li>
+                            <a href="#Dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#Settings" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                        </li>
+                        <li>
+                            <a href="#Earnings" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Earnings</a>
+                        </li>
+                        <li>
+                            <a href="#Signout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
