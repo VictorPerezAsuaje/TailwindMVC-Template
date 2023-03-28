@@ -1,11 +1,24 @@
 ﻿@model Dictionary<string, string>
 
+@model Dictionary<string, string>
+
 <style>
     :root {
         --color-transparent: transparent;
         --color-current: currentColor;
         --primary: @Model["--primary"];
         --secondary: @Model["--secondary"];
+        /* Slate */
+        --color-slate-50:  @Model["--color-slate-50"];
+        --color-slate-100: @Model["--color-slate-100"];
+        --color-slate-200: @Model["--color-slate-200"];
+        --color-slate-300: @Model["--color-slate-300"];
+        --color-slate-400: @Model["--color-slate-400"];
+        --color-slate-500: @Model["--color-slate-500"];
+        --color-slate-600: @Model["--color-slate-600"];
+        --color-slate-700: @Model["--color-slate-700"];
+        --color-slate-800: @Model["--color-slate-800"];
+        --color-slate-900: @Model["--color-slate-900"];
         /* Grays */
         --color-gray-50:  @Model["--color-gray-50"];
         --color-gray-100: @Model["--color-gray-100"];
@@ -17,6 +30,39 @@
         --color-gray-700: @Model["--color-gray-700"];
         --color-gray-800: @Model["--color-gray-800"];
         --color-gray-900: @Model["--color-gray-900"];
+        /* Zinc */
+        --color-zinc-50:  @Model["--color-zinc-50"];
+        --color-zinc-100: @Model["--color-zinc-100"];
+        --color-zinc-200: @Model["--color-zinc-200"];
+        --color-zinc-300: @Model["--color-zinc-300"];
+        --color-zinc-400: @Model["--color-zinc-400"];
+        --color-zinc-500: @Model["--color-zinc-500"];
+        --color-zinc-600: @Model["--color-zinc-600"];
+        --color-zinc-700: @Model["--color-zinc-700"];
+        --color-zinc-800: @Model["--color-zinc-800"];
+        --color-zinc-900: @Model["--color-zinc-900"];
+        /* Neutral */
+        --color-neutral-50:  @Model["--color-neutral-50"];
+        --color-neutral-100: @Model["--color-neutral-100"];
+        --color-neutral-200: @Model["--color-neutral-200"];
+        --color-neutral-300: @Model["--color-neutral-300"];
+        --color-neutral-400: @Model["--color-neutral-400"];
+        --color-neutral-500: @Model["--color-neutral-500"];
+        --color-neutral-600: @Model["--color-neutral-600"];
+        --color-neutral-700: @Model["--color-neutral-700"];
+        --color-neutral-800: @Model["--color-neutral-800"];
+        --color-neutral-900: @Model["--color-neutral-900"];
+        /* Stone */
+        --color-stone-50:  @Model["--color-stone-50"];
+        --color-stone-100: @Model["--color-stone-100"];
+        --color-stone-200: @Model["--color-stone-200"];
+        --color-stone-300: @Model["--color-stone-300"];
+        --color-stone-400: @Model["--color-stone-400"];
+        --color-stone-500: @Model["--color-stone-500"];
+        --color-stone-600: @Model["--color-stone-600"];
+        --color-stone-700: @Model["--color-stone-700"];
+        --color-stone-800: @Model["--color-stone-800"];
+        --color-stone-900: @Model["--color-stone-900"];
         /* Reds */
         --color-red-50: @Model["--color-red-50"];
         --color-red-100: @Model["--color-red-100"];
@@ -28,6 +74,28 @@
         --color-red-700: @Model["--color-red-700"];
         --color-red-800: @Model["--color-red-800"];
         --color-red-900: @Model["--color-red-900"];
+        /* Oranges */
+        --color-orange-50:  @Model["--color-orange-50"];
+        --color-orange-100: @Model["--color-orange-100"];
+        --color-orange-200: @Model["--color-orange-200"];
+        --color-orange-300: @Model["--color-orange-300"];
+        --color-orange-400: @Model["--color-orange-400"];
+        --color-orange-500: @Model["--color-orange-500"];
+        --color-orange-600: @Model["--color-orange-600"];
+        --color-orange-700: @Model["--color-orange-700"];
+        --color-orange-800: @Model["--color-orange-800"];
+        --color-orange-900: @Model["--color-orange-900"];
+        /* Amber */
+        --color-amber-50:  @Model["--color-amber-50"];
+        --color-amber-100: @Model["--color-amber-100"];
+        --color-amber-200: @Model["--color-amber-200"];
+        --color-amber-300: @Model["--color-amber-300"];
+        --color-amber-400: @Model["--color-amber-400"];
+        --color-amber-500: @Model["--color-amber-500"];
+        --color-amber-600: @Model["--color-amber-600"];
+        --color-amber-700: @Model["--color-amber-700"];
+        --color-amber-800: @Model["--color-amber-800"];
+        --color-amber-900: @Model["--color-amber-900"];
         /* Yellows */
         --color-yellow-50:  @Model["--color-yellow-50"];
         --color-yellow-100: @Model["--color-yellow-100"];
@@ -39,6 +107,17 @@
         --color-yellow-700: @Model["--color-yellow-700"];
         --color-yellow-800: @Model["--color-yellow-800"];
         --color-yellow-900: @Model["--color-yellow-900"];
+        /* Limes */
+        --color-lime-50:  @Model["--color-lime-50"];
+        --color-lime-100: @Model["--color-lime-100"];
+        --color-lime-200: @Model["--color-lime-200"];
+        --color-lime-300: @Model["--color-lime-300"];
+        --color-lime-400: @Model["--color-lime-400"];
+        --color-lime-500: @Model["--color-lime-500"];
+        --color-lime-600: @Model["--color-lime-600"];
+        --color-lime-700: @Model["--color-lime-700"];
+        --color-lime-800: @Model["--color-lime-800"];
+        --color-lime-900: @Model["--color-lime-900"];
         /* Greens */
         --color-green-50: @Model["--color-green-50"];
         --color-green-100: @Model["--color-green-100"];
@@ -50,6 +129,50 @@
         --color-green-700: @Model["--color-green-700"];
         --color-green-800: @Model["--color-green-800"];
         --color-green-900: @Model["--color-green-900"];
+        /* Emerald */
+        --color-emerald-50:  @Model["--color-emerald-50"];
+        --color-emerald-100: @Model["--color-emerald-100"];
+        --color-emerald-200: @Model["--color-emerald-200"];
+        --color-emerald-300: @Model["--color-emerald-300"];
+        --color-emerald-400: @Model["--color-emerald-400"];
+        --color-emerald-500: @Model["--color-emerald-500"];
+        --color-emerald-600: @Model["--color-emerald-600"];
+        --color-emerald-700: @Model["--color-emerald-700"];
+        --color-emerald-800: @Model["--color-emerald-800"];
+        --color-emerald-900: @Model["--color-emerald-900"];
+        /* Teal */
+        --color-teal-50:  @Model["--color-teal-50"];
+        --color-teal-100: @Model["--color-teal-100"];
+        --color-teal-200: @Model["--color-teal-200"];
+        --color-teal-300: @Model["--color-teal-300"];
+        --color-teal-400: @Model["--color-teal-400"];
+        --color-teal-500: @Model["--color-teal-500"];
+        --color-teal-600: @Model["--color-teal-600"];
+        --color-teal-700: @Model["--color-teal-700"];
+        --color-teal-800: @Model["--color-teal-800"];
+        --color-teal-900: @Model["--color-teal-900"];
+        /* Cyan */
+        --color-cyan-50:  @Model["--color-cyan-50"];
+        --color-cyan-100: @Model["--color-cyan-100"];
+        --color-cyan-200: @Model["--color-cyan-200"];
+        --color-cyan-300: @Model["--color-cyan-300"];
+        --color-cyan-400: @Model["--color-cyan-400"];
+        --color-cyan-500: @Model["--color-cyan-500"];
+        --color-cyan-600: @Model["--color-cyan-600"];
+        --color-cyan-700: @Model["--color-cyan-700"];
+        --color-cyan-800: @Model["--color-cyan-800"];
+        --color-cyan-900: @Model["--color-cyan-900"];
+        /* Sky */
+        --color-sky-50:  @Model["--color-sky-50"];
+        --color-sky-100: @Model["--color-sky-100"];
+        --color-sky-200: @Model["--color-sky-200"];
+        --color-sky-300: @Model["--color-sky-300"];
+        --color-sky-400: @Model["--color-sky-400"];
+        --color-sky-500: @Model["--color-sky-500"];
+        --color-sky-600: @Model["--color-sky-600"];
+        --color-sky-700: @Model["--color-sky-700"];
+        --color-sky-800: @Model["--color-sky-800"];
+        --color-sky-900: @Model["--color-sky-900"];
         /* Blues */
         --color-blue-50:  @Model["--color-blue-50"];
         --color-blue-100: @Model["--color-blue-100"];
@@ -72,6 +195,17 @@
         --color-indigo-700: @Model["--color-indigo-700"];
         --color-indigo-800: @Model["--color-indigo-800"];
         --color-indigo-900: @Model["--color-indigo-900"];
+        /* Violet */
+        --color-violet-50:  @Model["--color-violet-50"];
+        --color-violet-100: @Model["--color-violet-100"];
+        --color-violet-200: @Model["--color-violet-200"];
+        --color-violet-300: @Model["--color-violet-300"];
+        --color-violet-400: @Model["--color-violet-400"];
+        --color-violet-500: @Model["--color-violet-500"];
+        --color-violet-600: @Model["--color-violet-600"];
+        --color-violet-700: @Model["--color-violet-700"];
+        --color-violet-800: @Model["--color-violet-800"];
+        --color-violet-900: @Model["--color-violet-900"];
         /* Purples */
         --color-purple-50:  @Model["--color-purple-50"];
         --color-purple-100: @Model["--color-purple-100"];
@@ -83,7 +217,18 @@
         --color-purple-700: @Model["--color-purple-700"];
         --color-purple-800: @Model["--color-purple-800"];
         --color-purple-900: @Model["--color-purple-900"];
-        /* Pinks */
+        /* Fuchsia */
+        --color-fuchsia-50:  @Model["--color-fuchsia-50"];
+        --color-fuchsia-100: @Model["--color-fuchsia-100"];
+        --color-fuchsia-200: @Model["--color-fuchsia-200"];
+        --color-fuchsia-300: @Model["--color-fuchsia-300"];
+        --color-fuchsia-400: @Model["--color-fuchsia-400"];
+        --color-fuchsia-500: @Model["--color-fuchsia-500"];
+        --color-fuchsia-600: @Model["--color-fuchsia-600"];
+        --color-fuchsia-700: @Model["--color-fuchsia-700"];
+        --color-fuchsia-800: @Model["--color-fuchsia-800"];
+        --color-fuchsia-900: @Model["--color-fuchsia-900"];
+        /* Pink */
         --color-pink-50:  @Model["--color-pink-50"];
         --color-pink-100: @Model["--color-pink-100"];
         --color-pink-200: @Model["--color-pink-200"];
@@ -94,6 +239,17 @@
         --color-pink-700: @Model["--color-pink-700"];
         --color-pink-800: @Model["--color-pink-800"];
         --color-pink-900: @Model["--color-pink-900"];
+        /* Rose */
+        --color-rose-50:  @Model["--color-rose-50"];
+        --color-rose-100: @Model["--color-rose-100"];
+        --color-rose-200: @Model["--color-rose-200"];
+        --color-rose-300: @Model["--color-rose-300"];
+        --color-rose-400: @Model["--color-rose-400"];
+        --color-rose-500: @Model["--color-rose-500"];
+        --color-rose-600: @Model["--color-rose-600"];
+        --color-rose-700: @Model["--color-rose-700"];
+        --color-rose-800: @Model["--color-rose-800"];
+        --color-rose-900: @Model["--color-rose-900"];
     }
 
 </style>
